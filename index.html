@@ -1,51 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Steven Quijije — Desarrollador Full Stack en Guayaquil, Ecuador">
-    <meta name="author" content="Steven Quijije">
-    <meta property="og:title" content="Steven Quijije | Dev">
-    <meta property="og:description" content="Desarrollador Full Stack — Guayaquil, Ecuador">
-    <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Steven Quijije — Desarrollador Full Stack en Guayaquil, Ecuador"
+    />
+    <meta name="author" content="Steven Quijije" />
+    <meta property="og:title" content="Steven Quijije | Dev" />
+    <meta
+      property="og:description"
+      content="Desarrollador Full Stack — Guayaquil, Ecuador"
+    />
+    <meta property="og:type" content="website" />
     <title>Steven Quijije | Dev</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header>
-        <nav aria-label="Navegación principal">
-            <span class="logo">Steven Quijije</span>
-            <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Projectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+      <nav aria-label="Navegación principal">
+        <span class="logo">Steven Quijije</span>
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Projectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <h1>Hola, soy <span class="name">Steven Quijije</span></h1>
-            <p>Desarrollador de software apasionado por crear soluciones innovadoras.</p>
-        </section>
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-        </section>
-        
-        <section id="proyectos">
-            <h2>Proyectos</h2>
-        </section>
+      <section id="hero">
+        <h1>Hola, soy <span class="name">Steven Quijije</span></h1>
+        <p>
+          Desarrollador de software apasionado por crear soluciones innovadoras.
+        </p>
+      </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-        </section>
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <div class="sobre-layout">
+          <div class="sobre-foto">
+            <img 
+                src="assets/images/foto_perfil.png" 
+                alt="Steven Quijije — Desarrollador Full Stack"
+                class="foto-perfil"
+            >
+          </div>
+          <div class="sobre-texto">
+            <p>
+              Soy estudiante de Ingeniería de Software en la Universidad de
+              Guayaquil. Me especializo en desarrollo web full stack con React,
+              Node.js y .NET.
+            </p>
+            <p>
+              Actualmente construyendo proyectos reales para armar mi portafolio
+              profesional.
+            </p>
+          </div>
+          <div class="sobre-skills">
+            <h3>Skills</h3>
+            <ul>
+              <li>React · TypeScript</li>
+              <li>Node.js · Express</li>
+              <li>SQL · PostgreSQL</li>
+              <li>C# · .NET</li>
+            </ul>
+          </div>
+          <div class="sobre-stats">
+            <div class="stat">
+              <span>7</span>
+              <p>Módulos</p>
+            </div>
+            <div class="stat">
+              <span>26</span>
+              <p>Semanas</p>
+            </div>
+            <div class="stat">
+              <span>12+</span>
+              <p>Proyectos</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="proyectos-grid">
+          <article class="proyecto-card">
+            <h3>Weather Dashboard</h3>
+            <p>App del clima con API real. JavaScript + Fetch.</p>
+            <span class="tag">JavaScript</span>
+          </article>
+          <article class="proyecto-card">
+            <h3>E-commerce React</h3>
+            <p>Tienda con carrito y React Router.</p>
+            <span class="tag">React</span>
+          </article>
+          <article class="proyecto-card">
+            <h3>Task Manager API</h3>
+            <p>REST API con Node.js y JWT.</p>
+            <span class="tag">Node.js</span>
+          </article>
+          <article class="proyecto-card">
+            <h3>Portfolio V2</h3>
+            <p>Este mismo sitio, en React + TypeScript.</p>
+            <span class="tag">React · TS</span>
+          </article>
+          <article class="proyecto-card featured">
+            <h3>Fullstack Blog CMS</h3>
+            <p>Sistema completo con React, Node y PostgreSQL. Auth real.</p>
+            <span class="tag">Fullstack</span>
+          </article>
+          <article class="proyecto-card">
+            <h3>AI-Powered App</h3>
+            <p>Integración con OpenAI API.</p>
+            <span class="tag">IA</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+      </section>
     </main>
 
-        <footer>
-            <p>© 2026 Steven Quijije</p>
-        </footer>
-    
-</body>
+    <footer>
+      <p>© 2026 Steven Quijije</p>
+    </footer>
+  </body>
 </html>

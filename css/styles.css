@@ -1,0 +1,226 @@
+/* ── RESET ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── VARIABLES ── */
+:root {
+    --color-bg: #0a0a0f;
+    --color-surface: #13131e;
+    --color-primary: #3b82f6;
+    --color-text: #e2e2f0;
+    --color-muted: #6b7280;
+    --font-main: 'Segoe UI', sans-serif;
+    --max-width: 1100px;
+}
+
+/* ── BASE ── */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+/* ── HEADER / NAV ── */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid #1e1e2e;
+    z-index: 100;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: var(--color-text);
+}
+
+/* ── HERO ── */
+#hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+#hero h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.name {
+    color: var(--color-primary);
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: var(--color-muted);
+    max-width: 500px;
+}
+
+/* ── SECCIONES ── */
+section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    color: var(--color-text);
+}
+
+/* ── GRID DE PROYECTOS ── */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.proyecto-card {
+    background: var(--color-surface);
+    border: 1px solid #1e1e2e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.proyecto-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.proyecto-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.proyecto-card p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #1e2a3a;
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* ── TARJETA DESTACADA ── */
+.featured {
+    grid-column: span 2;
+    border-color: var(--color-primary);
+}
+
+/* ── SOBRE MÍ CON GRID AREAS ── */
+.sobre-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "foto  texto"
+        "stats skills";
+    gap: 2rem;
+}
+
+.sobre-foto  { grid-area: foto; }
+.sobre-texto { grid-area: texto; }
+.sobre-skills { grid-area: skills; }
+.sobre-stats { grid-area: stats; }
+
+.foto-perfil {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primary);
+    display: block;
+}
+
+.sobre-texto p {
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.sobre-skills h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.sobre-skills ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sobre-skills li {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-primary);
+}
+
+.sobre-stats {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.stat span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.stat p {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
