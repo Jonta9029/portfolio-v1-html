@@ -12,8 +12,13 @@
     --color-primary: #3b82f6;
     --color-text: #e2e2f0;
     --color-muted: #6b7280;
-    --font-family: "Cormorant Garamond", serif;
-    --max-width: 1400px;
+    --font-main: 'Segoe UI', sans-serif;
+    --max-width: 1100px;
+    --transition-fast: 0.15s ease;
+    --transition-mid:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s ease-in-out;
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 /* ── BASE ── */
@@ -46,6 +51,23 @@ nav {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-primary);
+    position: relative;
+    cursor: pointer;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-mid);
+}
+
+.logo:hover::after {
+    width: 100%;
 }
 
 nav ul {
@@ -59,10 +81,26 @@ nav ul a {
     color: var(--color-muted);
     font-size: 0.95rem;
     transition: color 0.2s;
+    position: relative;
+}
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-primary);
+    transition: width var(--transition-fast);
 }
 
 nav ul a:hover {
     color: var(--color-text);
+}
+
+nav ul a:hover::after {
+    width: 100%;
 }
 
 /* ── HERO ── */
@@ -81,6 +119,7 @@ nav ul a:hover {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1rem;
+    animation: fadeInUp 0.6s var(--transition-mid) both;
 }
 
 .name {
@@ -91,6 +130,7 @@ nav ul a:hover {
     font-size: 1.2rem;
     color: var(--color-muted);
     max-width: 500px;
+    animation: fadeInUp 0.6s 0.15s var(--transition-mid) both;
 }
 
 /* ── SECCIONES ── */
@@ -119,13 +159,21 @@ section h2 {
     border: 1px solid #1e1e2e;
     border-radius: 12px;
     padding: 1.5rem;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: all var(--transition-mid);
 }
 
 .proyecto-card:hover {
     border-color: var(--color-primary);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
 }
+
+.proyecto-card:nth-child(1) { animation: fadeInUp 0.5s 0.1s both; }
+.proyecto-card:nth-child(2) { animation: fadeInUp 0.5s 0.2s both; }
+.proyecto-card:nth-child(3) { animation: fadeInUp 0.5s 0.3s both; }
+.proyecto-card:nth-child(4) { animation: fadeInUp 0.5s 0.4s both; }
+.proyecto-card:nth-child(5) { animation: fadeInUp 0.5s 0.5s both; }
+.proyecto-card:nth-child(6) { animation: fadeInUp 0.5s 0.6s both; }
 
 .proyecto-card h3 {
     font-size: 1.1rem;
@@ -178,6 +226,7 @@ section h2 {
     object-fit: cover;
     border: 3px solid var(--color-primary);
     display: block;
+    animation: pulse-glow 3s infinite;
 }
 
 .sobre-texto p {
@@ -207,20 +256,5 @@ section h2 {
     border-left: 2px solid var(--color-primary);
 }
 
-.sobre-stats {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.stat span {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--color-primary);
-}
-
-.stat p {
-    font-size: 0.85rem;
-    color: var(--color-muted);
-}
+.sobre-skills li:nth-child(1) { animation: slideInLeft 0.4s 0.1s both; }
+.sobre-skills li:nth-child(2) { animation: slideInLeft 0.4s 0.2s both; }
