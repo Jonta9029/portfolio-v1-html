@@ -26,6 +26,11 @@
           <li><a href="#proyectos">Projectos</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
+        <button class="nav-mobile-btn" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
       </nav>
     </header>
 
@@ -128,5 +133,32 @@
     <footer>
       <p>© 2026 Steven Quijije</p>
     </footer>
+
+    <script>
+    const btn = document.querySelector('.nav-mobile-btn');
+    const nav = document.querySelector('nav');
+
+    // Abrir/cerrar con el botón
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('open');
+    });
+
+    // Cerrar al tocar fuera del nav
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target)) {
+            nav.classList.remove('open');
+        }
+    });
+
+    // Cerrar al tocar un link del menú
+    document.querySelectorAll('nav ul a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+        });
+    });
+</script>
   </body>
+
+
 </html>
