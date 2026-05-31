@@ -17,6 +17,7 @@
     <title>Steven Quijije | Dev</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <header>
       <nav aria-label="Navegación principal">
@@ -27,9 +28,9 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
         <button class="nav-mobile-btn" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </nav>
     </header>
@@ -46,11 +47,11 @@
         <h2>Sobre mí</h2>
         <div class="sobre-layout">
           <div class="sobre-foto">
-            <img 
-                src="assets/images/foto_perfil.png" 
-                alt="Steven Quijije — Desarrollador Full Stack"
-                class="foto-perfil"
-            >
+            <img
+              src="assets/images/foto_perfil.png"
+              alt="Steven Quijije — Desarrollador Full Stack"
+              class="foto-perfil"
+            />
           </div>
           <div class="sobre-texto">
             <p>
@@ -130,36 +131,46 @@
       </section>
     </main>
 
-    <footer>
-      <p>© 2026 Steven Quijije</p>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/john-steven-quijije-tovar-78a44a241" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://github.com/Jonta9029" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          
+        </div>
+        <div class="footer-text">
+          <p>© 2026 Steven Quijije. Construido con código y café.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-    const btn = document.querySelector('.nav-mobile-btn');
-    const nav = document.querySelector('nav');
+      const btn = document.querySelector(".nav-mobile-btn");
+      const nav = document.querySelector("nav");
 
-    // Abrir/cerrar con el botón
-    btn.addEventListener('click', (e) => {
+      // Abrir/cerrar con el botón
+      btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        nav.classList.toggle('open');
-    });
+        nav.classList.toggle("open");
+      });
 
-    // Cerrar al tocar fuera del nav
-    document.addEventListener('click', (e) => {
+      // Cerrar al tocar fuera del nav
+      document.addEventListener("click", (e) => {
         if (!nav.contains(e.target)) {
-            nav.classList.remove('open');
+          nav.classList.remove("open");
         }
-    });
+      });
 
-    // Cerrar al tocar un link del menú
-    document.querySelectorAll('nav ul a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('open');
+      // Cerrar al tocar un link del menú
+      document.querySelectorAll("nav ul a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
         });
-    });
+      });
     </script>
-
   </body>
-
-
 </html>
